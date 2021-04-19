@@ -9,8 +9,6 @@ import android.provider.MediaStore
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.Toast
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class RegisterFruitActivity : AppCompatActivity() {
     lateinit var imageView: ImageView
@@ -23,7 +21,7 @@ class RegisterFruitActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register_fruit)
 
         val cancelBtn = findViewById<Button>(R.id.cancelBtn)
-        cancelBtn.setOnClickListener{
+        cancelBtn.setOnClickListener {
             finish()
         }
 
@@ -36,11 +34,14 @@ class RegisterFruitActivity : AppCompatActivity() {
         imageView = findViewById(R.id.imageView)
 
         val confirmBtn = findViewById<Button>(R.id.confirmBtn)
-        confirmBtn.setOnClickListener{
+        confirmBtn.setOnClickListener {
             val returnIntent = Intent()
             val fruitNameInput = findViewById<EditText>(R.id.fruit_name_input)
-            val valor = fruitNameInput.text.toString();
-            returnIntent.putExtra(MainActivity.MAIN_ACTIVITY_EXTRA_DATA_ID, valor)
+            val fruitName = fruitNameInput.text.toString();
+            val fruiDescriptionInput = findViewById<EditText>(R.id.fruit_description_input)
+            val fruitDescription = fruiDescriptionInput.text.toString();
+            val fruitItem = FruitItem(R.drawable.morango, fruitName, fruitDescription, imageUri)
+            returnIntent.putExtra(MainActivity.MAIN_ACTIVITY_EXTRA_DATA_ID, fruitItem)
             setResult(Activity.RESULT_OK, returnIntent)
             finish()
         }

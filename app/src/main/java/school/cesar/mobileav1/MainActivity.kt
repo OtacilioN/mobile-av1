@@ -11,6 +11,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    var fruitList:  MutableList<FruitItem> = mutableListOf()
+
     companion object {
         const val MAIN_ACTIVITY_REGISTRY_RESULT_CODE = 1
         const val MAIN_ACTIVITY_EXTRA_DATA_ID = "MAIN_ACTIVITY_EXTRA_DATA"
@@ -20,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val fruitList = initFruitList()
+        fruitList = initFruitList() as MutableList<FruitItem>
 
         val button = findViewById<FloatingActionButton>(R.id.floatingActionButton)
         button.setOnClickListener {
@@ -37,8 +39,14 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             if (MAIN_ACTIVITY_REGISTRY_RESULT_CODE == requestCode) {
-                val result = data?.getStringExtra(MAIN_ACTIVITY_EXTRA_DATA_ID)
-                val toast = Toast.makeText(this, "retornou $result", Toast.LENGTH_LONG)
+                val result = data?.getParcelableExtra<FruitItem>(MAIN_ACTIVITY_EXTRA_DATA_ID)
+                val fruitName = result?.fruitName
+                val fruitDescription = result?.fruitDescription
+                val fruitImageUri = result?.imageUri
+                fruitList.add(FruitItem(R.drawable.ic_baseline_filter_vintage_24, fruitName, fruitDescription, fruitImageUri))
+                val fruitSize = fruitList.size
+                recycler_view.adapter?.notifyItemInserted(fruitSize)
+                val toast = Toast.makeText(this, "retornou $fruitName, e o size foi $fruitSize", Toast.LENGTH_LONG)
                 toast.show()
             }
         }
