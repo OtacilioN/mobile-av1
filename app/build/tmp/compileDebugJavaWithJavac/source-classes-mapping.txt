@@ -1,0 +1,2 @@
+school/cesar/mobileav1/BuildConfig.java
+ school.cesar.mobileav1.BuildConfig
