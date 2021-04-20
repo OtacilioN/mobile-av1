@@ -4,18 +4,21 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.AdapterView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), FruitAdapter.OnImageClickListener {
 
-    var fruitList:  MutableList<FruitItem> = mutableListOf()
+    var fruitList: MutableList<FruitItem> = mutableListOf()
 
     companion object {
         const val MAIN_ACTIVITY_REGISTRY_RESULT_CODE = 1
+        const val MAIN_ACTIVITY_DELETE_RESULT_CODE = 2
         const val MAIN_ACTIVITY_EXTRA_DATA_ID = "MAIN_ACTIVITY_EXTRA_DATA"
+        const val MAIN_ACTIVITY_EXTRA_POSITION_ID = "MAIN_ACTIVITY_EXTRA_DATA_POSITION"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,9 +33,17 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(registerFruitActivity, MAIN_ACTIVITY_REGISTRY_RESULT_CODE)
         }
 
-        recycler_view.adapter = FruitAdapter(fruitList)
+        recycler_view.adapter = FruitAdapter(fruitList, this)
         recycler_view.layoutManager = LinearLayoutManager(this)
         recycler_view.setHasFixedSize(true)
+    }
+
+    override fun onImageClick(position: Int) {
+        val clickedItem: FruitItem = fruitList[position]
+        val deleteActivity = Intent(this, DeleteActivity::class.java)
+        deleteActivity.putExtra(MAIN_ACTIVITY_EXTRA_DATA_ID, clickedItem)
+        deleteActivity.putExtra(MAIN_ACTIVITY_EXTRA_POSITION_ID, position)
+        startActivityForResult(deleteActivity, MAIN_ACTIVITY_DELETE_RESULT_CODE)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -43,11 +54,29 @@ class MainActivity : AppCompatActivity() {
                 val fruitName = result?.fruitName
                 val fruitDescription = result?.fruitDescription
                 val fruitImageUri = result?.imageUri
-                fruitList.add(FruitItem(R.drawable.ic_baseline_filter_vintage_24, fruitName, fruitDescription, fruitImageUri))
+                fruitList.add(
+                    FruitItem(
+                        R.drawable.ic_baseline_filter_vintage_24,
+                        fruitName,
+                        fruitDescription,
+                        fruitImageUri
+                    )
+                )
                 val fruitSize = fruitList.size
                 recycler_view.adapter?.notifyItemInserted(fruitSize)
-                val toast = Toast.makeText(this, "retornou $fruitName, e o size foi $fruitSize", Toast.LENGTH_LONG)
+                val toast = Toast.makeText(
+                    this,
+                    "fruta $fruitName adicionada com sucesso",
+                    Toast.LENGTH_LONG
+                )
                 toast.show()
+            }
+            if (MAIN_ACTIVITY_DELETE_RESULT_CODE == requestCode) {
+                val deletedPosition = data?.getIntExtra(MAIN_ACTIVITY_EXTRA_DATA_ID, 0)
+                if (deletedPosition != null) {
+                    fruitList.removeAt(deletedPosition)
+                    recycler_view.adapter?.notifyItemRemoved(deletedPosition)
+                }
             }
         }
     }

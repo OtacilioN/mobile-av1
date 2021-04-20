@@ -79,20 +79,24 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/otaci
 		ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:11:9-47
+activity#school.cesar.mobileav1.DeleteActivity
+ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:12:9-61
+	android:name
+		ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:12:19-49
 activity#school.cesar.mobileav1.RegisterFruitActivity
-ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:12:9-68
+ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:13:9-59
 	android:name
-		ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:12:19-56
+		ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:13:19-56
 activity#school.cesar.mobileav1.MainActivity
-ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:13:9-19:20
+ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:14:9-19:20
 	android:name
-		ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:13:19-47
+		ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:14:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:14:13-18:29
+ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:15:13-18:29
 action#android.intent.action.MAIN
-ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:15:17-69
+ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:15:25-66
+		ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
 ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:17:17-77
 	android:name

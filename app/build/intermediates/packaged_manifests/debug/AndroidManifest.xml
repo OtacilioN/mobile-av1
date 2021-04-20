@@ -19,6 +19,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Mobileav1" >
+        <activity android:name="school.cesar.mobileav1.DeleteActivity" />
         <activity android:name="school.cesar.mobileav1.RegisterFruitActivity" />
         <activity android:name="school.cesar.mobileav1.MainActivity" >
             <intent-filter>
