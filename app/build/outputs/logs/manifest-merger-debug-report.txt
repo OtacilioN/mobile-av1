@@ -89,6 +89,8 @@ ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/Andro
 		ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:13:19-56
 activity#school.cesar.mobileav1.MainActivity
 ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:14:9-19:20
+	android:configChanges
+		ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:14:48-109
 	android:name
 		ADDED from /home/otaciliomaia/AndroidStudioProjects/mobileav1/app/src/main/AndroidManifest.xml:14:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER

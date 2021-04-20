@@ -21,7 +21,9 @@
         android:theme="@style/Theme.Mobileav1" >
         <activity android:name="school.cesar.mobileav1.DeleteActivity" />
         <activity android:name="school.cesar.mobileav1.RegisterFruitActivity" />
-        <activity android:name="school.cesar.mobileav1.MainActivity" >
+        <activity
+            android:name="school.cesar.mobileav1.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
