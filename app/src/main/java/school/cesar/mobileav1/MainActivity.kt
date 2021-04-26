@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.Toast
+import android.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,6 +25,9 @@ class MainActivity : AppCompatActivity(), FruitAdapter.OnImageClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.my_toolbar)
+        toolbar.title = "Lista de Frutas"
+        setSupportActionBar(toolbar)
 
         fruitList = initFruitList() as MutableList<FruitItem>
 
@@ -95,6 +99,14 @@ class MainActivity : AppCompatActivity(), FruitAdapter.OnImageClickListener {
             fruitDescription = "fruta rica em nutrientes como fibras, vitaminas B e C e minerais, com propriedades antioxidantes e anti-inflamatórias que ajudam a combater a dor e inflamação, aumentar as defesas do organismo e controlar os níveis de açúcar no sangue."
         )
 
+        list += morango
+        list += pinha
+        list += morango
+        list += pinha
+        list += morango
+        list += pinha
+        list += morango
+        list += pinha
         list += morango
         list += pinha
 

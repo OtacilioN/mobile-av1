@@ -8,6 +8,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -21,6 +22,11 @@ class RegisterFruitActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_fruit)
+
+        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.register_toolbar)
+        toolbar.title = "Adicionar Fruta"
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val cancelBtn = findViewById<Button>(R.id.cancelBtn)
         cancelBtn.setOnClickListener {
@@ -58,5 +64,10 @@ class RegisterFruitActivity : AppCompatActivity() {
             val takeFlags: Int = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
             imageUri?.let { contentResolver.takePersistableUriPermission(it, takeFlags) }
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        finish()
+        return super.onOptionsItemSelected(item)
     }
 }

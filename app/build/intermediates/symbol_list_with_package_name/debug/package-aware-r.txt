@@ -1821,6 +1821,7 @@ id design_menu_item_text
 id design_navigation_view
 id details_fruit_description
 id details_fruit_title
+id details_toolbar
 id dialog_button
 id dimensions
 id direct
@@ -1956,6 +1957,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id my_toolbar
 id navigation_header_container
 id never
 id noScroll
@@ -1988,6 +1990,7 @@ id radio
 id ratio
 id rectangles
 id recycler_view
+id register_toolbar
 id reverseSawtooth
 id right
 id rightToLeft
