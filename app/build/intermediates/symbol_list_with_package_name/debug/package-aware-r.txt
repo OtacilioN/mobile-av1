@@ -1640,6 +1640,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_baseline_filter_alt_24
 drawable ic_baseline_filter_vintage_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
@@ -1743,6 +1744,7 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
+id action_filter
 id action_image
 id action_menu_divider
 id action_menu_presenter
@@ -2087,6 +2089,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toolbar_menu
 id top
 id topPanel
 id touch_outside
@@ -2256,6 +2259,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+menu toolbar_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
